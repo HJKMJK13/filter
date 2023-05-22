@@ -113,3 +113,16 @@ body{
 .rotate button:nth-child(4){
     font-size: 18px;
 }
+
+.wrapper .preview-img{
+    flex-grow: 1;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    margin-left: 20px;
+}
+
+.preview-img img{
+    width: 500px;
+    height: 350px;
+}
