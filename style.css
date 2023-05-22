@@ -126,3 +126,35 @@ body{
     width: 500px;
     height: 350px;
 }
+
+.controls button{
+    font-size: 14px;
+    cursor: pointer;
+    color:white;
+    background: white;
+    padding: 10px 20px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+.controls .reset-filter{
+    color: #6c757d;
+    border: 1px solid #6c757d;
+}
+
+.controls .choose-img{
+    background-color: #6c757d;
+    border: 1px solid #6c757d;
+    color: #fff;
+}
+
+.controls .save-img{
+    background-color: #5372f0;
+    border:  1px solid #5372f0;
+    color: #fff;
+}
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+}
