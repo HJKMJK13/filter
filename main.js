@@ -5,8 +5,26 @@ const filterElement=document.querySelectorAll(".filter button")
 const filterNameElement=document.querySelector(".filter-info .name")
 const filterSliderElement=document.querySelector(".slider input")
 const filterValueElement=document.querySelector(".filter-info .value")
+const rotateElement=document.querySelectorAll(".rotate button")
 
 let brightness=100,saturation=100,inversion=0,grayscale=0;
+let rotate=0,flipHorizontal=1,flipVertical=1
+rotateElement.forEach(Option=>{
+    Option.addEventListener("click",()=>{
+        if(Option.id === "left"){
+            rotate -=90
+        }
+        else if(Option.id ==="right"){
+            rotate +=90
+        }
+        else if(Option.id ==="horizontal"){
+            flipHorizontal=flipHorizontal ===1 ? -1 :1;
+        }else{
+            flipVertical=flipVertical === 1 ? -1 : 1
+        }
+        applyFilters()
+    })
+})
 
 const loadImage=()=>{
     let file=fileInputElement.files[0]
@@ -62,7 +80,7 @@ const updateFilter=()=>{
 }
 
 const applyFilters=()=>{
-    // previewImgElement.style.trasform=
+    previewImgElement.style.transform=`rotate(${rotate}deg) scale(${flipHorizontal}, ${flipVertical})`
     previewImgElement.style.filter=`brightness(${brightness}%) saturate(${saturation}%) invert(${inversion}%) grayscale(${grayscale}%)`
 }
 fileInputElement.addEventListener("change",loadImage)
