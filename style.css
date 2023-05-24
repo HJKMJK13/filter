@@ -158,3 +158,8 @@ body{
     display: flex;
     justify-content: space-between;
 }
+
+.container.disabled :where(.editor-panel,.reset-filter,.save-img){
+    opacity: .6;
+    pointer-events: none;
+}
