@@ -6,6 +6,7 @@ const loadImage=()=>{
     let file=fileInputElement.files[0]
     console.log(file)
     if(!file)return
+    previewImgElement.src=URL.createObjectURL(file)
 }
 fileInputElement.addEventListener("change",loadImage)
 chooseImgBtnElement.addEventListener("click",()=>fileInputElement.click())
