@@ -3,6 +3,8 @@ const chooseImgBtnElement=document.querySelector(".choose-img")
 const previewImgElement=document.querySelector(".preview-img img")
 const filterElement=document.querySelectorAll(".filter button")
 const filterNameElement=document.querySelector(".filter-info .name")
+const filterSliderElement=document.querySelector(".slider input")
+const filterValueElement=document.querySelector(".filter-info .value")
 
 const loadImage=()=>{
     let file=fileInputElement.files[0]
@@ -21,5 +23,10 @@ filterElement.forEach(Option=>{
         filterNameElement.textContent=Option.textContent
     })
 })
+
+const updateFilter=()=>{
+    filterValueElement.textContent=`${filterSliderElement.value}%`
+}
 fileInputElement.addEventListener("change",loadImage)
 chooseImgBtnElement.addEventListener("click",()=>fileInputElement.click())
+filterSliderElement.addEventListener("input",updateFilter)
